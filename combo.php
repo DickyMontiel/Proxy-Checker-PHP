@@ -59,8 +59,8 @@
         //echo $resultado;
 
         
-
-        if(curl_errno($ch) or strpos($resultado, "Please Wait... | Cloudflare") or strpos($resultado, "Comprueba que no eres un bot para tener acceso a") or strpos($resultado, "<title>Attention Required! | Cloudflare</title>") or strpos($resultado, "Something went wrong") or strpos($resultado, "nginx") or strpos($resultado, "502 Bad Gateway") or strpos($resultado, "1005") or strpos($resultado, "Please complete the security check to access") or strpos($resultado, "https://www.google.com/recaptcha/api2/")){
+        //strpos($resultado, "https://www.google.com/recaptcha/api2/"
+        if(curl_errno($ch) or strpos($resultado, "Please Wait... | Cloudflare") or strpos($resultado, "Comprueba que no eres un bot para tener acceso a") or strpos($resultado, "<title>Attention Required! | Cloudflare</title>") or strpos($resultado, "Something went wrong") or strpos($resultado, "nginx") or strpos($resultado, "502 Bad Gateway") or strpos($resultado, "1005") or strpos($resultado, "Please complete the security check to access")){
             /*echo "<tr>";
                 echo "<td><span style='color:red;'>".$proxy."</span></td>";
             echo "</tr>";*/
@@ -69,14 +69,14 @@
 
                 //echo $resultado;
             }else if(curl_errno($ch)){
-                echo $proxy." | No se puede conectar al proxy \n";
+                echo $proxy." | Cant connect to proxy \n";
             }else{
-                echo $proxy." | Bad bot detectado \n";
+                echo $proxy." | Bad proxy \n";
             }
 
             
         }else{
-            echo $resultado;
+            //echo $resultado;
             /*echo "<tr>";
             echo "<td><span style='color:green;'>".$proxy."</span></td>";
             echo "</tr>";*/
